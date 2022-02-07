@@ -13,7 +13,7 @@ export default function Home() {
       {address ? (<Dashboard address={address} />) : (
 
         <WalletConnect>
-          <Button onClick={() => connectWallet('injected')}>Connect Wallet</Button>
+          <Button backgroundColor='#3773f5' onClick={() => connectWallet('injected')}>Connect Wallet</Button>
           <Details>You need Chrome to be <br /> able to run this app</Details>
         </WalletConnect>
 
