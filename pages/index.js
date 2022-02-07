@@ -3,14 +3,22 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useWeb3 } from '@3rdweb/hooks'
 import styled from 'styled-components'
+import Dashboard from './Dashboard'
+import { Button } from '../styles/GlobalStyles'
 
 export default function Home() {
   const { address, connectWallet } = useWeb3();
   return (
     <Wrapper>
-      <WalletConnect>
-      <Button onClick={() => connectWallet('injected')}>Connect Wallet</Button>
-      </WalletConnect>
+      {address ? (<Dashboard address={address} />) : (
+
+        <WalletConnect>
+          <Button onClick={() => connectWallet('injected')}>Connect Wallet</Button>
+          <Details>You need Chrome to be <br /> able to run this app</Details>
+        </WalletConnect>
+
+      )}
+
     </Wrapper>
   )
 }
@@ -32,17 +40,10 @@ const WalletConnect = styled.div`
   align-items: center;
 `;
 
-const Button = styled.div`
-  // flex: 0;
-  border: 1px solid #2b82bf;
-  padding: 0.8rem;
-  font-size: 1.3rem;
+const Details = styled.div`
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 1rem;
   font-weight: 500;
-  border-radius: 0.5rem;
-  background-color: #3773f5;
-  color: #000;
-
-  &:hover {
-    cursor: pointer;
-  }
+  color: #282b2f;
 `;
