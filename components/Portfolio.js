@@ -3,11 +3,25 @@ import styled from 'styled-components';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { coins } from '../static/coins';
 import Coin from './Coin';
+import BalanceChart from './BalanceChart';
 
 const Portfolio = () => {
     return (
         <Wrapper>
             <Content>
+                <Chart>
+                    <div>
+                        <Balance>
+                            <BalanceTitle>Portfolio Balance</BalanceTitle>
+                            <BalanceValue>
+                                {'$'}
+                                {/* {walletBalance.toLocaleString()} */}
+                                46,000
+                            </BalanceValue>
+                        </Balance>
+                    </div>
+                    <BalanceChart />
+                </Chart>
                 <PortfolioTable>
                     <TableItem>
                         <Title>Your Assets</Title>
@@ -44,6 +58,7 @@ const Wrapper = styled.div`
     flex: 1;
     display: flex;
     justify-content: center;
+    padding-bottom: 2rem;
 `;
 
 const Content = styled.div`
@@ -83,3 +98,21 @@ const Title = styled.div`
     font-size: 1.5rem;
     font-weight: 600;
 `
+
+const Chart = styled.div`
+    border: 1px solid #282b2f;
+    padding: 1rem 2rem;
+`;
+
+const Balance = styled.div``;
+
+const BalanceTitle = styled.div`
+    color: #8a919e;
+    font-size: 0.9rem;
+`;
+
+const BalanceValue = styled.div`
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+`;
