@@ -70,6 +70,7 @@ const Content = styled.div`
 const PortfolioTable = styled.div`
     margin-top: 1rem;
     border: 1px solid #282b2f;
+    margin-bottom: 3rem;
 `;
 
 const Table = styled.table`

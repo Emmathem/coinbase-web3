@@ -5,11 +5,13 @@ import { useWeb3 } from '@3rdweb/hooks'
 import styled from 'styled-components'
 import Dashboard from './Dashboard'
 import { Button } from '../styles/GlobalStyles'
+import MetaPageTitle from '../components/MetaPageTitle'
 
 export default function Home() {
   const { address, connectWallet } = useWeb3();
   return (
     <Wrapper>
+      <MetaPageTitle title="Welcome" />
       {address ? (<Dashboard address={address} />) : (
 
         <WalletConnect>

@@ -20,6 +20,7 @@ const Wrapper = styled.div`
     max-height: calc(100vh - 64px);
     overflow: hidden;
     overflow-y: scroll;
+    /* margin-bottom: 3rem; */
     ::-webkit-scrollbar {
         display: none;
     }
